@@ -7,20 +7,54 @@
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title>Digitalendar</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
   </head>
+  
   <body>
     <noscript>
       <strong>We're sorry but Digitalendar doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
-    <div id="app"></div>
+      <div id="app"> Fonctionnalitées </div>
     <!-- built files will be auto injected -->
     
-    <div class="card" style="width: 18rem;">
-      <div class="card-body">
-        <iframe id="widget_autocomplete_preview"  frameborder="0" src="https://meteofrance.com/widget/prevision/691230##3F51B5CC"> </iframe>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      
+      <div class="col">
+        <iframe id="widget_autocomplete_preview"  width="100%" height="100%" frameborder="0" src="https://meteofrance.com/widget/prevision/691230"> </iframe>
       </div>
+      
+      <div class="col">
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container">
+          <div id="tradingview_0fced"></div>
+            <div class="tradingview-widget-copyright"><a href="https://fr.tradingview.com/symbols/EGLDUSDT/?exchange=BINANCE" rel="noopener" target="_blank"><span class="blue-text">EGLDUSDT graphique</span></a> par TradingView</div>
+              <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+              <script type="text/javascript">
+                new TradingView.widget(
+                {
+                  "width": 980,
+                  "height": 610,
+                  "symbol": "BINANCE:EGLDUSDT",
+                  "interval": "D",
+                  "timezone": "Etc/UTC",
+                  "theme": "dark",
+                  "style": "1",
+                  "locale": "fr",
+                  "toolbar_bg": "#f1f3f6",
+                  "enable_publishing": false,
+                  "allow_symbol_change": true,
+                  "container_id": "tradingview_0fced"
+                  }
+                 );
+                </script>
+              </div>
+           </div>
+      
+      <div class="col">
+        <iframe src="https://fr.euronews.com/embed/timeline" scrolling="no" style="border:none; min-height:425px; width:100%; height:100%;"></iframe>
+      </div>
+    </div>
   </body>
-
 </html>
